@@ -1,5 +1,6 @@
 import random
 import itertools
+from click import option
 from django.utils import timezone
 from django.conf import settings
 from django.contrib.auth.models import User
@@ -15,6 +16,49 @@ from mixnet.mixcrypt import MixCrypt
 from mixnet.models import Auth
 from voting.models import Voting, Question, QuestionOption
 
+class VotingModelTestCase(BaseTestCase):
+    def setUp(self):
+        q = Question(desc="Descripcion")
+        q.save()
+
+        opt1 = QuestionOption(question=q,option="opcion1")
+        opt1.save()
+        opt2 = QuestionOption(question=q,option="opcion2")
+        opt2.save()
+
+        self.v = Voting(name="Votacion", question=q)
+
+        self.v.save()
+
+        super().setUp()
+
+    def tearDown(self):
+        super().tearDown()
+        self.v=None
+
+    def testExist(self):
+        v = Voting.objects.get(name="Votacion")
+        self.assertEqual(v.question.options.all()[0].option,'opcion1')
+        self.assertEqual(v.question.options.all()[1].option,'opcion2')
+        self.assertEqual(len(v.question.options.all()),2)
+
+    def test_create_votingAPI(self):
+        self.login()
+        data = {
+            'name':'Example',
+            'desc': 'Description example',
+            'question': 'I want a',
+            'question_opt': ['cat','dog','horse']
+        }
+        response = self.client.post('/voting/',data,format='json')
+        self.assertEqual(response.status_code,201)
+
+        voting = Voting.objects.get(name='Example')
+        self.assertEqual(voting.desc,'Description example')
+
+
+
+
 
 class VotingTestCase(BaseTestCase):
 
@@ -23,6 +67,20 @@ class VotingTestCase(BaseTestCase):
 
     def tearDown(self):
         super().tearDown()
+
+    def test_toString(self):
+        v = self.create_voting()
+        self.assertEqual(str(v), "test voting")
+        self.assertEqual(str(v.question),"test question")
+        self.assertEqual(str(v.question.options.all()[0]),"option 1 (2)")
+
+    def test_update_voting_400(self):
+        v = self.create_voting()
+        data = {}
+        self.login()
+        response = self.client.post('/voting/{}/'.format(v.pk),data,format='json')
+        self.assertEqual(response.status_code,405)
+
 
     def encrypt_msg(self, msg, v, bits=settings.KEYBITS):
         pk = v.pub_key
