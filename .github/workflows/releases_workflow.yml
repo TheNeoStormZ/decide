@@ -11,7 +11,7 @@ on:
 
 jobs:
   buildTest:
-    uses: https://github.com/TheNeoStormZ/decide/.github/workflows/django.yml@master
+    uses: TheNeoStormZ/decide/.github/workflows/django.yml@master
     secrets: 
       CODACY_PROJECT_TOKEN: ${{secrets.CODACY_PROJECT_TOKEN}}
      
