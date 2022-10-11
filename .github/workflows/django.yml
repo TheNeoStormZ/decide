@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     strategy: 
-       	matrix:
+     matrix:
           pyversion: ['3.6.15', '3.8']
           postgresversion: ['postgres:10.8','postgres:12']
           
