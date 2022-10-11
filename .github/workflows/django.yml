@@ -28,7 +28,7 @@ jobs:
     - name: Set up Python ${{matrix.pyversion}}
       uses: actions/setup-python@v2
       with:
-        python-version: 3${{matrix.pyversion}}
+        python-version: ${{matrix.pyversion}}
     - name: psycopg2 prerequisites
       run: sudo apt-get install libpq-dev
     - name: Install dependencies and config
