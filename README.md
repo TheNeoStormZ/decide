@@ -5,7 +5,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/eb7e81e8215e4e4ea60dc19d4a029773)](https://www.codacy.com/gh/TheNeoStormZ/decide/dashboard?utm_source=github.com&utm_medium=referral&utm_content=TheNeoStormZ/decide&utm_campaign=Badge_Coverage)
 
 
-[![.github/workflows/django.yml](https://github.com/TheNeoStormZ/decide/actions/workflows/django.yml/badge.svg)](https://github.com/TheNeoStormZ/decide/actions/workflows/django.yml)
+
 
 Plataforma voto electrónico educativa
 =====================================
