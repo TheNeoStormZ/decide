@@ -1,4 +1,9 @@
-[![Build Status](https://travis-ci.com/wadobo/decide.svg?branch=master)](https://travis-ci.com/wadobo/decide) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/94a85eaa0e974c71af6899ea3b0d27e0)](https://www.codacy.com/app/Wadobo/decide?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=wadobo/decide&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/94a85eaa0e974c71af6899ea3b0d27e0)](https://www.codacy.com/app/Wadobo/decide?utm_source=github.com&utm_medium=referral&utm_content=wadobo/decide&utm_campaign=Badge_Coverage)
+[![Python application](https://github.com/TheNeoStormZ/decide/actions/workflows/django.yml/badge.svg)](https://github.com/TheNeoStormZ/decide/actions/workflows/django.yml)
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/eb7e81e8215e4e4ea60dc19d4a029773)](https://www.codacy.com/gh/TheNeoStormZ/decide/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=TheNeoStormZ/decide&amp;utm_campaign=Badge_Grade)
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/eb7e81e8215e4e4ea60dc19d4a029773)](https://www.codacy.com/gh/TheNeoStormZ/decide/dashboard?utm_source=github.com&utm_medium=referral&utm_content=TheNeoStormZ/decide&utm_campaign=Badge_Coverage)
+
 
 [![.github/workflows/django.yml](https://github.com/TheNeoStormZ/decide/actions/workflows/django.yml/badge.svg)](https://github.com/TheNeoStormZ/decide/actions/workflows/django.yml)
 
