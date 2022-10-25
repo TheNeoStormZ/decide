@@ -40,3 +40,14 @@ APIS = {
     'visualizer': 'http://10.5.0.1:8000',
     'voting': 'http://10.5.0.1:8000',
 }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'decide',
+        'USER': 'decide',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        'PASSWORD':'decide'
+    }
+}
